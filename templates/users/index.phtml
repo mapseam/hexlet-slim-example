@@ -1,0 +1,28 @@
+<div><?= $msg ?></div>
+<br>
+<a href="/users">All users</a>
+<form action="/users" method="get">
+  <input type="search" required name="term" value="<?= htmlspecialchars($term) ?>" />
+  <input type="submit" value="Search" />
+</form>
+<table>
+  <?php foreach ($users as $user): ?>
+    <tr>
+      <dt>
+        <?= htmlspecialchars($user['id']) ?>
+      </dt>
+      <dt>
+        <?= htmlspecialchars($user['name']) ?>
+      </dt>
+      <dt>
+        <?= htmlspecialchars($user['email']) ?>
+      </dt>
+      <dt>
+        <a href="/users/<?= $user['id'] ?>/edit">edit</a>
+      </dt>
+      <dt>
+        <a href="/users/<?= $user['id'] ?>/delete">delete</a>
+      </dt>
+    </tr>
+  <?php endforeach ?>
+</table>

@@ -1,0 +1,12 @@
+<table>
+  <?php foreach ($courses as $course): ?>
+    <tr>
+      <td>
+          <?= htmlspecialchars($course['id']) ?>
+      </td>
+      <td>
+          <?= htmlspecialchars($course['name']) ?>
+      </td>
+    </tr>
+  <?php endforeach ?>
+</table>

@@ -1,0 +1,6 @@
+<form action="/users/<?= htmlspecialchars($user['id']) ?>" method="post">
+  <input type="hidden" name="_METHOD" value="DELETE">
+  <input type="text" name="user[name]" value="<?= htmlspecialchars($user['name'] ?? ''); ?>" readonly>
+  <input type="text" name="user[email]" value="<?= htmlspecialchars($user['email'] ?? ''); ?>" readonly>
+  <input type="submit" value="Remove">
+</form>

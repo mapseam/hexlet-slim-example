@@ -1,0 +1,25 @@
+<h3>
+  New User
+</h3>
+<hr>
+<form action="/users" method="post">
+  <div>
+    <label>
+        Nickname:
+      <input type="text" required name="user[name]" value="<?= htmlspecialchars($user['name']) ?>">
+    </label>
+    <?php if (isset($errors['name'])): ?>
+      <div><?= $errors['name'] ?></div>
+    <?php endif ?>
+  </div>
+  <div>
+    <label>
+        E-mail:
+      <input type="email" required name="user[email]" value="<?= htmlspecialchars($user['email']) ?>">
+    </label>
+    <?php if (isset($errors['email'])): ?>
+      <div><?= $errors['email'] ?></div>
+    <?php endif ?>
+  </div>
+  <input type="submit" value="Submit">
+</form>
